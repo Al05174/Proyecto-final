@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestor de Prestamo de Equipos Audiovisuales</title>
+  <style>
+    :root {
+      --bg: #f5efe6;
+      --panel: #fffaf4;
+      --ink: #1f2937;
+      --muted: #5b6472;
+      --accent: #b45309;
+      --accent-2: #0f766e;
+      --line: #e7dccb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: linear-gradient(180deg, #efe6d7 0%, #f8f4ed 100%);
+      color: var(--ink);
+    }
+
+    .deck {
+      width: min(1100px, 92vw);
+      margin: 24px auto 48px;
+    }
+
+    .slide {
+      min-height: 82vh;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      margin: 24px 0;
+      padding: 56px 64px;
+      box-shadow: 0 18px 45px rgba(80, 58, 26, 0.08);
+      display: grid;
+      align-content: start;
+      gap: 18px;
+    }
+
+    .kicker {
+      font-size: 14px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    h1, h2 {
+      margin: 0;
+      line-height: 1.08;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 5vw, 4.6rem);
+      max-width: 12ch;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 3.8vw, 3.2rem);
+      max-width: 16ch;
+    }
+
+    p, li {
+      font-size: 1.2rem;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 24px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px 20px;
+      background: #fffdf9;
+    }
+
+    .card strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--ink);
+      font-size: 1.1rem;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(180, 83, 9, 0.12);
+      color: var(--accent);
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-right: 8px;
+      margin-bottom: 8px;
+    }
+
+    .accent {
+      color: var(--accent-2);
+    }
+
+    .footer-note {
+      font-size: 0.95rem;
+      color: #7a7f88;
+      margin-top: auto;
+    }
+
+    @media (max-width: 760px) {
+      .slide {
+        min-height: auto;
+        padding: 32px 24px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      p, li {
+        font-size: 1.05rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="deck">
+    <section class="slide">
+      <div class="kicker">Proyecto Final</div>
+      <h1>Gestor de Prestamo de Equipos Audiovisuales</h1>
+      <p>Albert Rafael Hernndez Osoria<br>Programacion I</p>
+      <p class="footer-note">Presentacion base lista para exponer o pasar a PowerPoint / Canva.</p>
+    </section>
+
+    <section class="slide">
+      <div class="kicker">Problema</div>
+      <h2>Que necesidad resuelve el sistema</h2>
+      <ul>
+        <li>El control manual de camaras, proyectores y accesorios genera retrasos y desorden.</li>
+        <li>No siempre se sabe que equipo esta disponible o quien lo tiene prestado.</li>
+        <li>Se pierden evidencias sobre devoluciones tardias, observaciones y danos.</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <div class="kicker">Idea</div>
+      <h2>Solucion propuesta</h2>
+      <p>Desarrollar un sistema de gestion que registre usuarios, equipos, prestamos, devoluciones y danos, con una estructura profesional basada en <span class="accent">POO, capas, base de datos y arquitectura distribuida</span>.</p>
+      <div>
+        <span class="badge">Camaras</span>
+        <span class="badge">Proyectores</span>
+        <span class="badge">Accesorios</span>
+        <span class="badge">Prestamos</span>
+        <span class="badge">Danos</span>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="kicker">Objetivo</div>
+      <h2>Meta general del proyecto</h2>
+      <p>Crear una solucion en C# para administrar el prestamo de equipos audiovisuales, permitiendo controlar disponibilidad, entregas y devoluciones, con persistencia en MySQL y comunicacion entre cliente y servidor.</p>
+    </section>
+
+    <section class="slide">
+      <div class="kicker">Tecnologias</div>
+      <h2>Herramientas utilizadas</h2>
+      <div class="grid">
+        <div class="card"><strong>Lenguaje y plataforma</strong><p>C# y .NET</p></div>
+        <div class="card"><strong>API</strong><p>ASP.NET Core Minimal API</p></div>
+        <div class="card"><strong>Persistencia</strong><p>Entity Framework Core</p></div>
+        <div class="card"><strong>Base de datos</strong><p>MySQL</p></div>
+        <div class="card"><strong>Cliente</strong><p>Aplicacion de consola</p></div>
+        <div class="card"><strong>Modelo</strong><p>Programacion Orientada a Objetos</p></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="kicker">Arquitectura</div>
+      <h2>Separacion de capas</h2>
+      <div class="grid">
+        <div class="card"><strong>Domain</strong><p>Entidades, enums, clase abstracta y reglas del negocio.</p></div>
+        <div class="card"><strong>Application</strong><p>Servicios, DTOs y casos de uso.</p></div>
+        <div class="card"><strong>Infrastructure</strong><p>Repositorios, DbContext y acceso a MySQL.</p></div>
+        <div class="card"><strong>Api + ConsoleClient</strong><p>Servidor HTTP y cliente distribuido.</p></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="kicker">POO</div>
+      <h2>Conceptos aplicados</h2>
+      <ul>
+        <li><strong>Clase abstracta:</strong> <code>Equipo</code></li>
+        <li><strong>Clases derivadas:</strong> <code>Camara</code>, <code>Proyector</code>, <code>Accesorio</code></li>
+        <li><strong>Clases normales:</strong> <code>Usuario</code> y <code>Prestamo</code></li>
+        <li><strong>Constructores:</strong> usados en <code>Usuario</code> y <code>Prestamo</code></li>
+        <li><strong>Sobrecargas:</strong> <code>RegistrarDanio</code> y <code>RegistrarDevolucion</code></li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <div class="kicker">Base de Datos</div>
+      <h2>Conexion y persistencia</h2>
+      <p>La aplicacion guarda usuarios, equipos y prestamos en MySQL. El sistema valida disponibilidad, actualiza estados y registra observaciones o danos en cada devolucion.</p>
+      <div class="grid">
+        <div class="card"><strong>Tablas principales</strong><p>Usuarios, Equipos y Prestamos</p></div>
+        <div class="card"><strong>Beneficio</strong><p>La informacion no se pierde y puede consultarse en cualquier momento.</p></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="kicker">Distribuida</div>
+      <h2>Como funciona la arquitectura</h2>
+      <ul>
+        <li>La API recibe y procesa las solicitudes del sistema.</li>
+        <li>El cliente de consola consume la API para consultar o registrar informacion.</li>
+        <li>La base de datos se gestiona desde la capa de infraestructura.</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <div class="kicker">Funcionalidades</div>
+      <h2>Que puede hacer el sistema</h2>
+      <div class="grid">
+        <div class="card"><strong>Usuarios</strong><p>Crear y consultar usuarios.</p></div>
+        <div class="card"><strong>Equipos</strong><p>Registrar camaras, proyectores y accesorios.</p></div>
+        <div class="card"><strong>Prestamos</strong><p>Crear prestamos solo si el equipo esta disponible.</p></div>
+        <div class="card"><strong>Devoluciones</strong><p>Registrar devoluciones y reportar danos.</p></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="kicker">Valor</div>
+      <h2>Beneficios del proyecto</h2>
+      <ul>
+        <li>Mejora el control del inventario audiovisual.</li>
+        <li>Reduce errores en prestamos y devoluciones.</li>
+        <li>Aporta trazabilidad sobre danos y mantenimiento.</li>
+        <li>Sirve como base para futuras mejoras como autenticacion o reportes.</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <div class="kicker">Repositorio</div>
+      <h2>Codigo publico del proyecto</h2>
+      <p><strong>GitHub:</strong><br><a href="https://github.com/Al05174/Proyecto-final">https://github.com/Al05174/Proyecto-final</a></p>
+      <p class="footer-note">Luego de subir tu video, coloca ese enlace tambien en los documentos de entrega.</p>
+    </section>
+
+    <section class="slide">
+      <div class="kicker">Cierre</div>
+      <h2>Conclusion</h2>
+      <p>El proyecto cumple con la asignacion porque representa un caso del mundo real y aplica base de datos, separacion de capas, arquitectura distribuida y los conceptos principales de Programacion Orientada a Objetos.</p>
+    </section>
+  </main>
+</body>
+</html>

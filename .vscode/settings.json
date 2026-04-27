@@ -1,0 +1,13 @@
+{
+  "files.exclude": {
+    "**/.DS_Store": true,
+    ".git": true,
+    ".dotnet": true,
+    "_archivo": true,
+    "*.zip": true,
+    "README.md": true,
+    ".gitignore": true,
+    "src/src.sln": true
+  },
+  "explorer.compactFolders": false
+}

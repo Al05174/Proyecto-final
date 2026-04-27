@@ -11,7 +11,7 @@ public static class DependencyInjection
     public static IServiceCollection AddInfrastructure(this IServiceCollection services, string connectionString)
     {
         services.AddDbContext<GestorPrestamosDbContext>(options =>
-            options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
+            options.UseMySql(connectionString, new MySqlServerVersion(new Version(9, 4, 0))));
 
         services.AddScoped<IEquipoRepository, EquipoRepository>();
         services.AddScoped<IUsuarioRepository, UsuarioRepository>();
